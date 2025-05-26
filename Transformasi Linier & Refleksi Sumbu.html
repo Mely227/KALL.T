@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Transformasi Linier &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Transformasi Linier & Refleksi Sumbu';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Ringkasan dan Tugas [Transformasi Matriks]" href="Transformasi%20Matriks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/teknik.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/teknik.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Selamat Datang Di Komputasi Aljabar Linier
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Matriks%20Linier.html">Matriks Invers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Transformasi%20Matriks.html">Ringkasan dan Tugas [Transformasi Matriks]</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transformasi Linier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTransformasi Linier & Refleksi Sumbu.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Transformasi Linier & Refleksi Sumbu.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformasi Linier</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-transformasi-linier">Syarat Transformasi Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-1-membuktikan-bahwa-t-v1-v2-v1-v2-v1-adalah-transformasi-linier">Tugas 1  Membuktikan bahwa <span class="math notranslate nohighlight">\(T(v1,v2)=(v1+v2,v1)\)</span> adalah transformasi Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-2-cari-matriks-rotasi-refleksi-shear-scala">Tugas 2  cari matriks rotasi,refleksi,shear,scala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-sumbu-x-2">Refleksi Sumbu X=2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-sumbu-y-2">Refleksi Sumbu y=2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-sumbu-y-x">Refleksi Sumbu y=x</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="transformasi-linier">
+<h1>Transformasi Linier<a class="headerlink" href="#transformasi-linier" title="Link to this heading">#</a></h1>
+<section id="pengertian">
+<h2>Pengertian<a class="headerlink" href="#pengertian" title="Link to this heading">#</a></h2>
+<p>Transformasi linier adalah pemetaan (fungsi) dari satu ruang vektor ke ruang vektor lain yang mempertahankan operasi penjumlahan dan perkalian skalar.
+Bentuk umum:
+<span class="math notranslate nohighlight">\(T: \mathbb{R}^n \to \mathbb{R}^m\)</span></p>
+</section>
+<section id="syarat-transformasi-linier">
+<h2>Syarat Transformasi Linier<a class="headerlink" href="#syarat-transformasi-linier" title="Link to this heading">#</a></h2>
+<p>Sebuah fungsi <span class="math notranslate nohighlight">\(T (v)\)</span>adalah transformasi linier jika untuk semua vektor <span class="math notranslate nohighlight">\(u,v\)</span> dan skalar <em>c</em>,berlaku:</p>
+<ol class="arabic simple">
+<li><p>Penjumlahan vektor:
+<span class="math notranslate nohighlight">\(T(u+v)=T(u)+T(v)\)</span></p></li>
+<li><p>Perkalian skalar:
+<span class="math notranslate nohighlight">\(T(c v)=cT(v)\)</span>
+Kalau kedua syarat di atas terpenuhi, maka 𝑇 adalah transformasi linier.</p></li>
+</ol>
+</section>
+<section id="tugas-1-membuktikan-bahwa-t-v1-v2-v1-v2-v1-adalah-transformasi-linier">
+<h2>Tugas 1  Membuktikan bahwa <span class="math notranslate nohighlight">\(T(v1,v2)=(v1+v2,v1)\)</span> adalah transformasi Linier<a class="headerlink" href="#tugas-1-membuktikan-bahwa-t-v1-v2-v1-v2-v1-adalah-transformasi-linier" title="Link to this heading">#</a></h2>
+</section>
+<section id="jawaban">
+<h2>Jawaban<a class="headerlink" href="#jawaban" title="Link to this heading">#</a></h2>
+<p>Transformasi <span class="math notranslate nohighlight">\(T(v1,v2)=(v1+v2,v1)\)</span> didefinisikan sebagai:
+<span class="math notranslate nohighlight">\(T(v1,v2)=(v1+v2,v1)\)</span></p>
+<p>Misalkan:</p>
+<p><span class="math notranslate nohighlight">\({u} = (u_1, u_2), \quad \mathbf{v} = (v_1, v_2)\)</span></p>
+<ol class="arabic simple">
+<li><p>Cek Penjumlahan:</p></li>
+</ol>
+<p>\begin{align*}
+T(\mathbf{u} + \mathbf{v}) &amp;= T((u_1 + v_1, u_2 + v_2)) \
+&amp;= ((u_1 + v_1) + (u_2 + v_2), u_1 + v_1) \
+&amp;= (u_1 + v_1 + u_2 + v_2, u_1 + v_1)
+\end{align*}</p>
+<p>Sementara itu:</p>
+<p><span class="math notranslate nohighlight">\(T(\mathbf{u}) = (u_1 + u_2, u_1), \quad T(\mathbf{v}) = (v_1 + v_2, v_1)\)</span></p>
+<p><span class="math notranslate nohighlight">\(T(\mathbf{u}) + T(\mathbf{v}) = (u_1 + u_2 + v_1 + v_2, u_1 + v_1)\)</span></p>
+<p>Karena:</p>
+<p><span class="math notranslate nohighlight">\( T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})\)</span></p>
+<ol class="arabic simple" start="2">
+<li><p>Cek Perkalian Skalar:</p></li>
+</ol>
+<p>\begin{align*}
+T(c\mathbf{v}) &amp;= T(cv_1, cv_2) \
+&amp;= (cv_1 + cv_2, cv_1) \
+&amp;= c(v_1 + v_2, v_1) \
+&amp;= cT(\mathbf{v})
+\end{align*}</p>
+<ol class="arabic simple" start="3">
+<li><p>Kesimpulan
+Karena kedua sifat di atas dipenuhi, maka:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(T(v_1, v_2) = (v_1 + v_2, v_1) \text{ adalah transformasi linier.}\)</span></p>
+</section>
+<section id="tugas-2-cari-matriks-rotasi-refleksi-shear-scala">
+<h2>Tugas 2  cari matriks rotasi,refleksi,shear,scala<a class="headerlink" href="#tugas-2-cari-matriks-rotasi-refleksi-shear-scala" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Reflection about the x-axis
+Matriks transformasi:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}\)</span></p>
+<p>Contoh titik:</p>
+<p><span class="math notranslate nohighlight">\(
+(2, 3) \rightarrow (2, -3) 
+\)</span></p>
+<p>Gambar GeoGebra:</p>
+<iframe scrolling="no" title="Gambar 1" src="https://www.geogebra.org/material/iframe/id/xhfraxhe/width/1272/height/594/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1272px" height="594px" style="border:0px;"> </iframe>
+<ol class="arabic simple" start="2">
+<li><p>Reflection about the y-axis
+Matriks transformasi:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{bmatrix}\)</span></p>
+<p>Contoh titik:</p>
+<p><span class="math notranslate nohighlight">\(
+(3, 2) \rightarrow (-3, 2) 
+\)</span></p>
+<p>Gambar GeoGebra:</p>
+<iframe scrolling="no" title="Gambar 2" src="https://www.geogebra.org/material/iframe/id/jxtushsj/width/630/height/586/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="630px" height="586px" style="border:0px;"> </iframe>
+<ol class="arabic simple" start="3">
+<li><p>Reflection about the line <span class="math notranslate nohighlight">\(y = x\)</span>
+Matriks transformasi:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix}\)</span></p>
+<p>Contoh titik:</p>
+<p><span class="math notranslate nohighlight">\(
+(5, 7) \rightarrow (7, 5) 
+\)</span></p>
+<p>Gambar GeoGebra:</p>
+<iframe scrolling="no" title="Gambar 3" src="https://www.geogebra.org/material/iframe/id/xwmzkx6q/width/630/height/586/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="630px" height="586px" style="border:0px;"> </iframe>
+<ol class="arabic simple" start="4">
+<li><p>Reflection about the line <span class="math notranslate nohighlight">\(y = -x\)</span>
+Matriks transformasi:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+0 &amp; -1 \\
+-1 &amp; 0
+\end{bmatrix}\)</span></p>
+<p>Contoh titik:</p>
+<p><span class="math notranslate nohighlight">\(
+(3, 1) \rightarrow (-1, -3) 
+\)</span></p>
+<p>Gambar GeoGebra:</p>
+<iframe scrolling="no" title="Gambar 4" src="https://www.geogebra.org/material/iframe/id/r9ujtmxc/width/630/height/586/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="630px" height="586px" style="border:0px;"> </iframe>
+<ol class="arabic simple" start="5">
+<li><p>Reflection about the origin
+Matriks transformasi:</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+-1 &amp; 0 \\
+0 &amp; -1
+\end{bmatrix}\)</span></p>
+<p>Contoh titik:</p>
+<p><span class="math notranslate nohighlight">\(
+(6, -3) \rightarrow (-6, 3) 
+\)</span></p>
+<p>Gambar Geogebra:</p>
+<iframe scrolling="no" title="Gambar 5" src="https://www.geogebra.org/material/iframe/id/rpcufcnz/width/630/height/586/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="630px" height="586px" style="border:0px;"> </iframe>
+</section>
+<section id="refleksi-sumbu-x-2">
+<h2>Refleksi Sumbu X=2<a class="headerlink" href="#refleksi-sumbu-x-2" title="Link to this heading">#</a></h2>
+<div class="highlight-python= notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Titik-titik objek asli (misalnya, segitiga 3D)
+points = np.array([
+    [2, 3, 1],
+    [1, 4, 3],
+    [4, 2, 1]
+]).T  # bentuknya 3xN
+
+# Matriks refleksi terhadap bidang x = 0
+reflection_matrix = np.array([
+    [-1, 0, 0],
+    [ 0, 1, 0],
+    [ 0, 0, 1]
+])
+
+# Langkah-langkah untuk refleksi terhadap bidang x = 2:
+# 1. Translasi ke kiri sejauh 2 satuan (x -= 2)
+translated_points = points.copy()
+translated_points[0] -= 2
+
+# 2. Refleksi terhadap bidang x = 0
+reflected_translated = reflection_matrix @ translated_points
+
+# 3. Translasi kembali ke kanan sejauh 2 satuan (x += 2)
+reflected_points = reflected_translated.copy()
+reflected_points[0] += 2
+
+# Buat plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection=&#39;3d&#39;)
+
+# Gambar objek asli (biru)
+ax.plot(points[0], points[1], points[2], &#39;bo-&#39;, label=&#39;Asli&#39;)
+
+# Gambar objek setelah refleksi (merah)
+ax.plot(reflected_points[0], reflected_points[1], reflected_points[2], &#39;ro-&#39;, label=&#39;Refleksi&#39;)
+
+# Tambahkan bidang bantu di x = 2
+x_plane = np.full((2, 2), 2)  # bidang x = 2
+y_plane, z_plane = np.meshgrid(np.linspace(0, 3, 2), np.linspace(0, 3, 2))
+ax.plot_surface(x_plane, y_plane, z_plane, alpha=0.2, color=&#39;gray&#39;)
+
+# Set aspek dan label
+ax.set_xlabel(&#39;X&#39;)
+ax.set_ylabel(&#39;Y&#39;)
+ax.set_zlabel(&#39;Z&#39;)
+ax.set_title(&#39;Refleksi terhadap bidang x = 2&#39;)
+ax.legend()
+ax.set_box_aspect([1,1,1])  # aspek rasio 1:1:1
+
+plt.show()
+</pre></div>
+</div>
+<p><img alt="image" src="https://hackmd.io/_uploads/SyeTegffel.png" /></p>
+</section>
+<section id="refleksi-sumbu-y-2">
+<h2>Refleksi Sumbu y=2<a class="headerlink" href="#refleksi-sumbu-y-2" title="Link to this heading">#</a></h2>
+<div class="highlight-python= notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Titik-titik objek asli (misalnya, segitiga 3D)
+points = np.array([
+    [1, 1, 1],
+    [2, 1, 1],
+    [1.5, 2, 1]
+]).T  # bentuknya 3xN
+
+# Matriks refleksi terhadap bidang y = 0
+reflection_matrix = np.array([
+    [1,  0, 0],
+    [0, -1, 0],
+    [0,  0, 1]
+])
+
+# Langkah-langkah untuk refleksi terhadap bidang y = 2:
+# 1. Translasi ke bawah sejauh 2 satuan (y -= 2)
+translated_points = points.copy()
+translated_points[1] -= 2
+
+# 2. Refleksi terhadap bidang y = 0
+reflected_translated = reflection_matrix @ translated_points
+
+# 3. Translasi kembali ke atas sejauh 2 satuan (y += 2)
+reflected_points = reflected_translated.copy()
+reflected_points[1] += 2
+
+# Buat plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection=&#39;3d&#39;)
+
+# Gambar objek asli (biru)
+ax.plot(points[0], points[1], points[2], &#39;bo-&#39;, label=&#39;Asli&#39;)
+
+# Gambar objek setelah refleksi (merah)
+ax.plot(reflected_points[0], reflected_points[1], reflected_points[2], &#39;ro-&#39;, label=&#39;Refleksi&#39;)
+
+# Tambahkan bidang bantu di y = 2
+y_plane = np.full((2, 2), 2)  # bidang y = 2
+x_plane, z_plane = np.meshgrid(np.linspace(0, 3, 2), np.linspace(0, 3, 2))
+ax.plot_surface(x_plane, y_plane, z_plane, alpha=0.2, color=&#39;gray&#39;)
+
+# Set aspek dan label
+ax.set_xlabel(&#39;X&#39;)
+ax.set_ylabel(&#39;Y&#39;)
+ax.set_zlabel(&#39;Z&#39;)
+ax.set_title(&#39;Refleksi terhadap bidang y = 2&#39;)
+ax.legend()
+ax.set_box_aspect([1,1,1])  # aspek rasio 1:1:1
+
+plt.show()
+</pre></div>
+</div>
+<p><img alt="image" src="https://hackmd.io/_uploads/Hkl-blffee.png" /></p>
+</section>
+<section id="refleksi-sumbu-y-x">
+<h2>Refleksi Sumbu y=x<a class="headerlink" href="#refleksi-sumbu-y-x" title="Link to this heading">#</a></h2>
+<div class="highlight-python= notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+# Titik-titik objek asli (misalnya, segitiga 3D)
+points = np.array([
+    [1, 4, 2],
+    [2, 3, 4],
+    [3, 2, 1]
+]).T  # bentuknya 3xN
+
+# Matriks refleksi terhadap bidang y = x
+reflection_matrix = np.array([
+    [0, 1, 0],
+    [1, 0, 0],
+    [0, 0, 1]
+])
+
+# Lakukan refleksi
+reflected_points = reflection_matrix @ points
+
+# Buat plot
+fig = plt.figure()
+ax = fig.add_subplot(111, projection=&#39;3d&#39;)
+
+# Gambar objek asli (biru)
+ax.plot(points[0], points[1], points[2], &#39;bo-&#39;, label=&#39;Asli&#39;)
+
+# Gambar objek setelah refleksi (merah)
+ax.plot(reflected_points[0], reflected_points[1], reflected_points[2], &#39;ro-&#39;, label=&#39;Refleksi&#39;)
+
+# Tambahkan bidang bantu y = x di bidang z = 0–3
+x_vals, y_vals = np.meshgrid(np.linspace(0, 3, 2), np.linspace(0, 3, 2))
+z_vals = np.zeros_like(x_vals)
+ax.plot_surface(x_vals, y_vals, z_vals, alpha=0.1, color=&#39;gray&#39;)
+
+# Tambahkan garis bantu bidang y = x (di z = 0)
+ax.plot([0, 3], [0, 3], [0, 0], &#39;k--&#39;, label=&#39;Bidang y = x (z=0)&#39;)
+
+# Set aspek dan label
+ax.set_xlabel(&#39;X&#39;)
+ax.set_ylabel(&#39;Y&#39;)
+ax.set_zlabel(&#39;Z&#39;)
+ax.set_title(&#39;Refleksi terhadap bidang y = x&#39;)
+ax.legend()
+ax.set_box_aspect([1,1,1])  # aspek rasio 1:1:1
+
+plt.show()
+</pre></div>
+</div>
+<p><img alt="image" src="https://hackmd.io/_uploads/rJkrWefMlx.png" /></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Transformasi%20Matriks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ringkasan dan Tugas [Transformasi Matriks]</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengertian">Pengertian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#syarat-transformasi-linier">Syarat Transformasi Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-1-membuktikan-bahwa-t-v1-v2-v1-v2-v1-adalah-transformasi-linier">Tugas 1  Membuktikan bahwa <span class="math notranslate nohighlight">\(T(v1,v2)=(v1+v2,v1)\)</span> adalah transformasi Linier</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tugas-2-cari-matriks-rotasi-refleksi-shear-scala">Tugas 2  cari matriks rotasi,refleksi,shear,scala</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-sumbu-x-2">Refleksi Sumbu X=2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-sumbu-y-2">Refleksi Sumbu y=2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-sumbu-y-x">Refleksi Sumbu y=x</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
